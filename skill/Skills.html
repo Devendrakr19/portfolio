@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My skill</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    .container {
+      width: 100%;
+      height: 100vh;
+      background: rgb(72, 71, 71);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .formarea {
+      width: 35%;
+      height: 500px;
+      background-color: rgb(35, 35, 35);
+      border-radius: 10px;
+      color: rgb(14, 240, 240);
+      box-shadow: 1px 1px 8px 2px rgb(221, 212, 212);
+      border: 1px solid red;
+    }
+    .formarea:hover {
+      box-shadow: 1px 1px 10px 2px rgb(27, 156, 141);
+    }
+    .formarea h1 {
+      text-align: center;
+    }
+    .formarea .row {
+      margin-top: 20px;
+      margin-left: 20px;
+      font-size: 24px;
+    }
+    .row input {
+      margin-top: 15px;
+    }
+    .slide {
+      -webkit-appearance: none;
+      width: 90%;
+      height: 14px;
+      outline: none;
+      border-radius: 15px;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .row .slide::-webkit-slider-thumb {
+      appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: rgb(0, 249, 249);
+      box-shadow: -400px 0 0 396px #03f0f8;
+      border: 3px solid rgb(57, 56, 56);
+    }
+
+    .slide::-webkit-slider-thumb:hover {
+      background-color: red;
+    }
+    .percnt {
+      width: 30px;
+      height: 20px;
+      padding: 5px;
+      float: right;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 60px;
+    }
+
+    @media (max-width:1000px){
+      .formarea{
+        width: 50%;
+    }
+  }
+    @media (max-width:750px){
+      .formarea{
+        width: 70%;
+    }
+  }
+    @media (max-width:600px){
+      .formarea{
+        width: 80%;
+    }
+  }
+    @media (max-width:400px){
+      .formarea{
+        width: 100%;
+    }
+  }
+  </style>
+  <body>
+    <div class="container" onmouseover="show()">
+      <form action="" class="formarea">
+        <h1>My skill</h1>
+        <div class="row">
+          <label for="Html & Css">Html & Css</label>
+          <div class="percnt">
+            <h2 id="outpt"></h2>
+            <span> %</span>
+          </div>
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="60"
+            class="slide"
+            id="rnge"
+            oninput="rangepercent()"
+          />
+        </div>
+
+        <div class="row">
+          <label for="Javascript">Javascript</label>
+          <div class="percnt">
+            <h2 id="outpt1"></h2>
+            <span> %</span>
+          </div>
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="30"
+            class="slide"
+            id="rnge1"
+            oninput="rangepercent()"
+          />
+        </div>
+
+        <div class="row">
+          <label for="Python">Python</label>
+          <div class="percnt">
+            <h2 id="outpt2"></h2>
+            <span> %</span>
+          </div>
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="45"
+            class="slide"
+            id="rnge2"
+            oninput="rangepercent()"
+          />
+        </div>
+
+        <div class="row">
+          <label for="Reactjs">React js</label>
+          <div class="percnt">
+            <h2 id="outpt3"></h2>
+            <span> %</span>
+          </div>
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="20"
+            class="slide"
+            id="rnge3"
+            oninput="rangepercent()"
+          />
+        </div>
+
+        <div class="row">
+          <label for="C++">C++</label>
+          <div class="percnt">
+            <h2 id="outpt4"></h2>
+            <span> %</span>
+          </div>
+          <input type="range" min="1" max="100" value="50" class="slide"id="rnge4" oninput="rangepercent()"/>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script>
+    var rangeslider = document.getElementById("rnge");
+    var rangeslider1 = document.getElementById("rnge1");
+    var rangeslider2 = document.getElementById("rnge2");
+    var rangeslider3 = document.getElementById("rnge3");
+    var rangeslider4 = document.getElementById("rnge4");
+
+    var output = document.getElementById("outpt");
+    var output1 = document.getElementById("outpt1");
+    var output2 = document.getElementById("outpt2");
+    var output3 = document.getElementById("outpt3");
+    var output4 = document.getElementById("outpt4");
+    function rangepercent() {
+      output.innerHTML = rangeslider.value;
+      output1.innerHTML = rangeslider1.value;
+      output2.innerHTML = rangeslider2.value;
+      output3.innerHTML = rangeslider3.value;
+      output4.innerHTML = rangeslider4.value;
+    }
+    let data = 60;
+    let data1 = 30;
+    let data2 = 45;
+    let data3 = 20;
+    let data4 = 50;
+
+    document.getElementById("outpt").innerHTML = data;
+    document.getElementById("outpt1").innerHTML = data1;
+    document.getElementById("outpt2").innerHTML = data2;
+    document.getElementById("outpt3").innerHTML = data3;
+    document.getElementById("outpt4").innerHTML = data4;
+  </script>
+</html>
